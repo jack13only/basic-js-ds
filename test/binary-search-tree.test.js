@@ -120,64 +120,64 @@ describe('Binary search tree', () => {
       assert.strictEqual(tree.has(1), true);
     });
 
-  //   it.optional('min works correctly', () => {
-  //     const tree = new BinarySearchTree();
-  //     tree.add(9);
-  //     tree.add(14);
-  //     tree.add(54);
-  //     tree.add(2);
-  //     tree.add(6);
-  //     tree.add(8);
-  //     tree.add(31);
-  //     tree.add(1);
-  //     tree.remove(6);
-  //     tree.remove(2);
-  //     assert.strictEqual(tree.min(), 1);
-  //   });
+    it.optional('min works correctly', () => {
+      const tree = new BinarySearchTree();
+      tree.add(9);
+      tree.add(14);
+      tree.add(54);
+      tree.add(2);
+      tree.add(6);
+      tree.add(8);
+      tree.add(31);
+      tree.add(1);
+      tree.remove(6);
+      tree.remove(2);
+      assert.strictEqual(tree.min(), 1);
+    });
 
-  //   it.optional('max works correctly', () => {
-  //     const tree = new BinarySearchTree();
-  //     tree.add(9);
-  //     tree.add(14);
-  //     tree.add(54);
-  //     tree.add(2);
-  //     tree.add(6);
-  //     tree.add(8);
-  //     tree.add(31);
-  //     tree.add(1);
-  //     tree.remove(6);
-  //     tree.remove(2);
-  //     assert.strictEqual(tree.max(), 54);
-  //   });
+    it.optional('max works correctly', () => {
+      const tree = new BinarySearchTree();
+      tree.add(9);
+      tree.add(14);
+      tree.add(54);
+      tree.add(2);
+      tree.add(6);
+      tree.add(8);
+      tree.add(31);
+      tree.add(1);
+      tree.remove(6);
+      tree.remove(2);
+      assert.strictEqual(tree.max(), 54);
+    });
 
-  // });
+  });
 
-  // describe('some additional tests', () => {
-  //   it.optional('correctly find min & max', () => {
-  //     const { values, min, max } = getTestingTools(20);
-  //     const tree = new BinarySearchTree();
-  //     values.forEach(value => tree.add(value));
-  //     assert.strictEqual(tree.min(), min);
-  //     assert.strictEqual(tree.max(), max);
-  //   });
+  describe('some additional tests', () => {
+    it.optional('correctly find min & max', () => {
+      const { values, min, max } = getTestingTools(20);
+      const tree = new BinarySearchTree();
+      values.forEach(value => tree.add(value));
+      assert.strictEqual(tree.min(), min);
+      assert.strictEqual(tree.max(), max);
+    });
 
-  //   it.optional('correctly find values', () => {
-  //     const { values } = getTestingTools(20);
-  //     const tree = new BinarySearchTree();
-  //     values.forEach(value => tree.add(value));
-  //     assert.strictEqual(values.every(value => tree.has(value) === true && tree.find(value).data === value), true);
-  //   });
+    it.optional('correctly find values', () => {
+      const { values } = getTestingTools(20);
+      const tree = new BinarySearchTree();
+      values.forEach(value => tree.add(value));
+      assert.strictEqual(values.every(value => tree.has(value) === true && tree.find(value).data === value), true);
+    });
 
-  //   it.optional('correctly remove values', () => {
-  //     const { values } = getTestingTools(20);
-  //     const tree = new BinarySearchTree();
-  //     values.forEach(value => tree.add(value));
-  //     values.sort((a, b) => a % 2 - b % 2 || a - b);
-  //     const valuesToRemove = values.splice(0, 10);
-  //     valuesToRemove.forEach(value => tree.remove(value));
-  //     assert.strictEqual(valuesToRemove.every(value => tree.has(value) === false), true);
-  //     assert.strictEqual(values.every(value => tree.has(value) === true), true);
-  //   });
+    it.optional('correctly remove values', () => {
+      const { values } = getTestingTools(20);
+      const tree = new BinarySearchTree();
+      values.forEach(value => tree.add(value));
+      values.sort((a, b) => a % 2 - b % 2 || a - b);
+      const valuesToRemove = values.splice(0, 10);
+      valuesToRemove.forEach(value => tree.remove(value));
+      assert.strictEqual(valuesToRemove.every(value => tree.has(value) === false), true);
+      assert.strictEqual(values.every(value => tree.has(value) === true), true);
+    });
   });
 
 });
