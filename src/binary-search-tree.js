@@ -48,13 +48,11 @@ module.exports = class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return this._findMin(this.tree)
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return this._findMax(this.tree)
   }
 
   _addNode(data, node) {
@@ -96,6 +94,16 @@ module.exports = class BinarySearchTree {
     if (!node.data) return null
     if (node.data === data) return parentNode
     return this._findParentNode(data, node.data > data ? node.left : node.right, node)
+  }
+
+  _findMin(node) {
+    if (node.left === null) return node.data
+    return this._findMin(node.left)
+  }
+
+  _findMax(node) {
+    if (node.right === null) return node.data
+    return this._findMax(node.right)
   }
 
 }
