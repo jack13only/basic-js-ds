@@ -14,26 +14,24 @@ const { ListNode } = require('../extensions/list-node.js');
  * queue.getUnderlyingList() // returns { value: 3, next: null }
  */
 module.exports = class Queue {
-  constructor() {
-    // this.list = null
-    this.head = null;
-    this.length = 0;
-  }
+  list = null
+  head = null
+  length = 0
 
   getUnderlyingList() {
     return this.list
   }
 
   enqueue(value) {
-    let list = new ListNode(value)
 
-    if (this.length === 0) {
-      this.head = list
+    if (!this.list) {
+      this.list = new ListNode(value)
+      this.head = this.list
     } else {
       let current = this.head
 
       while(current.next) {
-        current = current.head
+        current = current.next
       }
 
       current.next = new ListNode(value)
